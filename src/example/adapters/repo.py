@@ -16,6 +16,9 @@ class AbstractMachineLearningRepository(abc.ABC):
 class MachineLearningRepository(AbstractMachineLearningRepository):
     def __init__(self):
         pass
+
+    # Currently a simple implementation for demo purposes
+    # Realistically this would connect to the external dependency and return a model object.
     def get_model(self) -> AbstractModel:
         return RealModel()
 
@@ -30,9 +33,8 @@ class FeatureStoreRepository(AbstractFeatureStoreRepository):
     def __init__(self):
         pass
 
+    # Currently a simple implementation for demo purposes
+    # Realistically this would connect to the external dependency, parse and return the domain model
     def get_resume_keywords(self, user: User) -> ResumeKeywords:
-        # Query datastore
-        # parse results
-        # return results in domain object
-        raise ValueError("on purpose")
-        # return ResumeKeywords(keyword="Software Engineer")
+        
+        return ResumeKeywords(keyword="Software Engineer")
